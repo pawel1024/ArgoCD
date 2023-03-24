@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2023-03-24T18:18:04Z"
+  labels:
+    app: backend-service
+  name: backend-service
+  namespace: default
+  resourceVersion: "23537"
+  uid: 00050ac0-42db-43ae-a0a6-6b83898b40de
+spec:
+  clusterIP: 10.96.177.241
+  clusterIPs:
+  - 10.96.177.241
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: 5001-5001
+    port: 5001
+    protocol: TCP
+    targetPort: 5001
+  selector:
+    app: backend
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
